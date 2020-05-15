@@ -55,6 +55,7 @@ class ViewController: UIViewController {
       } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
       }
+        
     }
     
     func saveDataOnServer() {

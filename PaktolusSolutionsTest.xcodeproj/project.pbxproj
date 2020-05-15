@@ -10,12 +10,13 @@
 		185C6223246DA0C300865D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C6222246DA0C300865D2D /* AppDelegate.swift */; };
 		185C6225246DA0C300865D2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C6224246DA0C300865D2D /* SceneDelegate.swift */; };
 		185C6227246DA0C300865D2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C6226246DA0C300865D2D /* ViewController.swift */; };
-		185C622A246DA0C300865D2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C6228246DA0C300865D2D /* Main.storyboard */; };
 		185C622D246DA0C300865D2D /* PaktolusSolutionsTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185C622B246DA0C300865D2D /* PaktolusSolutionsTest.xcdatamodeld */; };
 		185C622F246DA0C500865D2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C622E246DA0C500865D2D /* Assets.xcassets */; };
 		185C6232246DA0C500865D2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C6230246DA0C500865D2D /* LaunchScreen.storyboard */; };
 		185C623D246DA0C600865D2D /* PaktolusSolutionsTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C623C246DA0C600865D2D /* PaktolusSolutionsTestTests.swift */; };
 		185C6248246DA0C600865D2D /* PaktolusSolutionsTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C6247246DA0C600865D2D /* PaktolusSolutionsTestUITests.swift */; };
+		185C6284246DC88000865D2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C6283246DC88000865D2D /* Main.storyboard */; };
+		18DD49B6246E8E0B00A220F4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD49B5246E8E0B00A220F4 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		185C6222246DA0C300865D2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185C6224246DA0C300865D2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		185C6226246DA0C300865D2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		185C6229246DA0C300865D2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185C622C246DA0C300865D2D /* PaktolusSolutionsTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaktolusSolutionsTest.xcdatamodel; sourceTree = "<group>"; };
 		185C622E246DA0C500865D2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185C6231246DA0C500865D2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		185C6243246DA0C600865D2D /* PaktolusSolutionsTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaktolusSolutionsTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		185C6247246DA0C600865D2D /* PaktolusSolutionsTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaktolusSolutionsTestUITests.swift; sourceTree = "<group>"; };
 		185C6249246DA0C600865D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185C6283246DC88000865D2D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18DD49B5246E8E0B00A220F4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				185C623B246DA0C600865D2D /* PaktolusSolutionsTestTests */,
 				185C6246246DA0C600865D2D /* PaktolusSolutionsTestUITests */,
 				185C6220246DA0C300865D2D /* Products */,
+				185C6258246DB46E00865D2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +104,11 @@
 		185C6221246DA0C300865D2D /* PaktolusSolutionsTest */ = {
 			isa = PBXGroup;
 			children = (
+				18DD49B4246E8DF500A220F4 /* Location */,
 				185C6222246DA0C300865D2D /* AppDelegate.swift */,
 				185C6224246DA0C300865D2D /* SceneDelegate.swift */,
 				185C6226246DA0C300865D2D /* ViewController.swift */,
-				185C6228246DA0C300865D2D /* Main.storyboard */,
+				185C6283246DC88000865D2D /* Main.storyboard */,
 				185C622E246DA0C500865D2D /* Assets.xcassets */,
 				185C6230246DA0C500865D2D /* LaunchScreen.storyboard */,
 				185C6233246DA0C500865D2D /* Info.plist */,
@@ -129,6 +133,21 @@
 				185C6249246DA0C600865D2D /* Info.plist */,
 			);
 			path = PaktolusSolutionsTestUITests;
+			sourceTree = "<group>";
+		};
+		185C6258246DB46E00865D2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18DD49B4246E8DF500A220F4 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				18DD49B5246E8E0B00A220F4 /* LocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185C6284246DC88000865D2D /* Main.storyboard in Resources */,
 				185C6232246DA0C500865D2D /* LaunchScreen.storyboard in Resources */,
 				185C622F246DA0C500865D2D /* Assets.xcassets in Resources */,
-				185C622A246DA0C300865D2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +283,7 @@
 			files = (
 				185C6227246DA0C300865D2D /* ViewController.swift in Sources */,
 				185C622D246DA0C300865D2D /* PaktolusSolutionsTest.xcdatamodeld in Sources */,
+				18DD49B6246E8E0B00A220F4 /* LocationManager.swift in Sources */,
 				185C6223246DA0C300865D2D /* AppDelegate.swift in Sources */,
 				185C6225246DA0C300865D2D /* SceneDelegate.swift in Sources */,
 			);
@@ -301,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		185C6228246DA0C300865D2D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				185C6229246DA0C300865D2D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		185C6230246DA0C500865D2D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PaktolusSolutionsTest/PaktolusSolutionsTestDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PaktolusSolutionsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PaktolusSolutionsTest/PaktolusSolutionsTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PaktolusSolutionsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

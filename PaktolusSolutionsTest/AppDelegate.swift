@@ -12,8 +12,11 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var backgroundUpdateTask: UIBackgroundTaskIdentifier!
+    var backgroundTaskTimer:Timer! = Timer()
+    let timeInterval = 180
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -33,6 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+
+       //Start the background fetch
+        self.doBackgroundTask()
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+
+        if self.backgroundTaskTimer != nil {
+            self.backgroundTaskTimer.invalidate()
+            self.backgroundTaskTimer = nil
+        }
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
@@ -76,6 +93,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func doBackgroundTask() {
+        DispatchQueue.global(qos: .default).async {
+            self.beginBackgroundTask()
+
+            if self.backgroundTaskTimer != nil {
+                self.backgroundTaskTimer.invalidate()
+                self.backgroundTaskTimer = nil
+            }
+
+            self.backgroundTaskTimer = Timer.scheduledTimer(timeInterval: TimeInterval(self.timeInterval), target: self, selector: #selector(self.startTracking), userInfo: nil, repeats: true)
+            RunLoop.current.add(self.backgroundTaskTimer, forMode: RunLoop.Mode.default)
+            RunLoop.current.run()
+
+            self.endBackgroundTask()
+
+        }
+    }
+    
+    @objc func startTracking() {
+        LocationManager.SharedManager.startLocationUpdate()
+    }
+
+    func beginBackgroundTask() {
+        self.backgroundUpdateTask = UIApplication.shared.beginBackgroundTask(withName: "Track trip", expirationHandler: {
+            self.endBackgroundTask()
+        })
+    }
+
+    func endBackgroundTask() {
+        UIApplication.shared.endBackgroundTask(self.backgroundUpdateTask)
+        self.backgroundUpdateTask = UIBackgroundTaskIdentifier.invalid
     }
 
 }

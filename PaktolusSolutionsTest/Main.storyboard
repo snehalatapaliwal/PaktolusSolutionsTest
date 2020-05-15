@@ -88,6 +88,9 @@
                                         <state key="normal" title="Calculate Calories">
                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculateCaloriesWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJl-hW-vcP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -65,5 +65,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Fetch location for calorie calculation</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Fetch location for calorie calculation</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Fetch location for calorie calculation</string>
 </dict>
 </plist>

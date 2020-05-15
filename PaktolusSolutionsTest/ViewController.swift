@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         let velocity = LocationManager.SharedManager.distance ?? 0.0 / Double(delegate.timeInterval)
          calories = (0.035 * Double((weight.text! as NSString).doubleValue)) + ((Double((Int(velocity) ^ 2)) / Double((height.text! as NSString).doubleValue))) * (0.029) * (Double((weight.text! as NSString).doubleValue))
         saveDataOnLocalDB()
+        saveDataOnServer()
     }
     
     func saveDataOnLocalDB() {
@@ -54,6 +55,34 @@ class ViewController: UIViewController {
       } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
       }
+    }
+    
+    func saveDataOnServer() {
+        let Url = String(format: "your url")
+        guard let serviceUrl = URL(string: Url) else { return }
+        let parameterDictionary = ["name" : name.text!, "age" : age.text!,"height" : height.text!,"weight" : weight.text!,"calories" : calories] as [String : Any]
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
+            return
+        }
+        request.httpBody = httpBody
+
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+            }.resume()
     }
 
 }
